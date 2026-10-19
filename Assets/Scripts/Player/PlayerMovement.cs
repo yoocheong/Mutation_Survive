@@ -29,7 +29,8 @@ public class PlayerMovement : MonoBehaviour
             rigidbody.MoveRotation(newRot); // 회전 적용
         }
 
-        rigidbody.MovePosition(rigidbody.position + direction * speed * Time.fixedDeltaTime);   // 이동 적용
+        Vector3 moveAmount = direction * speed * Time.fixedDeltaTime;   // 프레임당 이동량
+        rigidbody.MovePosition(rigidbody.position + moveAmount);   // 이동 적용
     }
 
     // 입력 처리 하는 함수
