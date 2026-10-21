@@ -4,8 +4,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody rigidbody;
-    [SerializeField] private float speed = 5.0f;    // 이동 속도 정하는 변수
-    [SerializeField] private float rotSpeed = 10.0f;    // 회전 속도 정하는 변수
+    [SerializeField] private float speed = 5.0f;    // 이동 속도
+    [SerializeField] private float rotSpeed = 10.0f;    // 회전 속도
 
     private Vector3 direction = Vector3.zero;   // 방향 벡터 0,0,0 으로 설정
 
@@ -24,12 +24,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (direction != Vector3.zero)  // 입력이 있을 때만 회전
         {
-            Quaternion targetRot = Quaternion.LookRotation(direction);  // 바라볼 방향 정하는 코드
-            Quaternion newRot = Quaternion.Slerp(rigidbody.rotation, targetRot, rotSpeed * Time.fixedDeltaTime);    // targetRot 까지 얼마나 회전할지 정하는 코드
+            Quaternion targetRot = Quaternion.LookRotation(direction);  // 바라볼 방향 정함
+            Quaternion newRot = Quaternion.Slerp(rigidbody.rotation, targetRot, rotSpeed * Time.fixedDeltaTime);    // targetRot 까지 얼마나 회전할지 정함
             rigidbody.MoveRotation(newRot); // 회전 적용
         }
 
-        Vector3 moveAmount = direction * speed * Time.fixedDeltaTime;   // 프레임당 이동량
+        Vector3 moveAmount = direction * speed * Time.fixedDeltaTime;   // 물리 프레임마다 이동량
         rigidbody.MovePosition(rigidbody.position + moveAmount);   // 이동 적용
     }
 
@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     {
         direction.x = Input.GetAxisRaw("Horizontal");
         direction.z = Input.GetAxisRaw("Vertical");
-        direction.Normalize();  // 벡터 정규화 하는 코드
+        direction.Normalize();  // 벡터 정규화
     }
 
 }
