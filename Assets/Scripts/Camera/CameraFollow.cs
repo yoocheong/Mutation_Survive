@@ -3,11 +3,11 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     [SerializeField] private Transform player;  // 플레이어 위치
-    [SerializeField] private Vector3 offSet;    // 카메라 offSet
+    private Vector3 offSet; // 카메라 offSet
 
     private void Awake()
     {
-        offSet = new Vector3(0f, 11.5f, -8.5f); // offSet 설정
+        offSet = new Vector3(0f, 9f, -5f);  // 카메라 offSet 초기화
     }
 
     private void LateUpdate()
