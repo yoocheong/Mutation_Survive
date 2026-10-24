@@ -3,38 +3,49 @@ using UnityEngine.SceneManagement;
 
 public class LobbyManager : MonoBehaviour
 {
-    [SerializeField] private GameObject upgradePanel;   // upgradePanel ÀÎ½ºÆåÅÍ¿¡¼­ ÂüÁ¶
-    [SerializeField] private GameObject settingsPanel;  // settingsPanel ÀÎ½ºÆåÅÍ¿¡¼­ ÂüÁ¶
-    [SerializeField] private string gameSceneName = "GameScene";    // Play ¹öÆ° Å¬¸¯½Ã ·ÎµåÇÒ ¾À ÀÌ¸§
+    [SerializeField] private GameObject upgradePanel;   // upgradePanel ì¸ìŠ¤í™í„°ì—ì„œ ì°¸ì¡°
+    [SerializeField] private GameObject settingsPanel;  // settingsPanel ì¸ìŠ¤í™í„°ì—ì„œ ì°¸ì¡°
+    [SerializeField] private string gameSceneName = "GameScene";    // Play ë²„íŠ¼ í´ë¦­ì‹œ ë¡œë“œí•  ì”¬ ì´ë¦„
 
     private void Awake()
     {
-        // ¸¸¾à ÂüÁ¶ ¾È µÅÀÖÀ» ½Ã ÄÜ¼Ö Ã¢À¸·Î ¾Ë·ÁÁÖ´Â ÄÚµå
-        if (upgradePanel == null) Debug.Log("upgradePanel ÂüÁ¶°¡ ºñ¾îÀÖ½À´Ï´Ù.");
-        if (settingsPanel == null) Debug.Log("settingsPanel ÂüÁ¶°¡ ºñ¾îÀÖ½À´Ï´Ù.");
+        // ë§Œì•½ ì°¸ì¡° ì•ˆ ë¼ìˆì„ ì‹œ ì½˜ì†” ì°½ìœ¼ë¡œ ì•Œë ¤ì£¼ëŠ” ì½”ë“œ
+        if (upgradePanel == null) Debug.LogWarning("upgradePanel ì°¸ì¡°ê°€ ë¹„ì–´ìˆìŠµë‹ˆë‹¤.");
+        if (settingsPanel == null) Debug.LogWarning("settingsPanel ì°¸ì¡°ê°€ ë¹„ì–´ìˆìŠµë‹ˆë‹¤.");
     }
 
 
     private void Start()
     {
-        ClosePanels();  // ½ÃÀÛÇÒ¶§ ÆĞ³Îµé ´Ù ²ô°í ½ÃÀÛ
+        ClosePanels();  // ì‹œì‘í• ë•Œ íŒ¨ë„ë“¤ ë‹¤ ë„ê³  ì‹œì‘
     }
 
 
-    // ÇÔ¼ö ½ÇÇà½Ã gameSceneName¾ÀÀ¸·Î ÀÌµ¿ÇÏ´Â ÇÔ¼ö
-    public void OnClickPlayButton() => SceneManager.LoadScene(gameSceneName);
+    // í•¨ìˆ˜ ì‹¤í–‰ì‹œ gameSceneNameì”¬ìœ¼ë¡œ ì´ë™í•˜ëŠ” í•¨ìˆ˜
+    public void OnClickPlayButton()
+    {
+        SceneManager.LoadScene(gameSceneName);
+    }
 
-    // ÇÔ¼ö ½ÇÇà½Ã upgradePanel Å°´Â ÇÔ¼ö
-    public void OnClickUpgradeButton() => SetPanel(upgradePanel, true);
+    // í•¨ìˆ˜ ì‹¤í–‰ì‹œ upgradePanel í‚¤ëŠ” í•¨ìˆ˜
+    public void OnClickUpgradeButton()
+    { 
+        SetPanel(upgradePanel, true);
+    }
 
-    // ÇÔ¼ö ½ÇÇà½Ã settingsPanel Å°´Â ÇÔ¼ö
-    public void OnClickSettingsButton() => SetPanel(settingsPanel, true);
-    
-    // ÇÔ¼ö ½ÇÇà½Ã ÆĞ³Îµé ²ô´Â ÇÔ¼ö
-    public void OnClickCloseButton() => ClosePanels();
+    // í•¨ìˆ˜ ì‹¤í–‰ì‹œ settingsPanel í‚¤ëŠ” í•¨ìˆ˜
+    public void OnClickSettingsButton()
+    {
+        SetPanel(settingsPanel, true);
+    }
 
+    // í•¨ìˆ˜ ì‹¤í–‰ì‹œ íŒ¨ë„ë“¤ ë„ëŠ” í•¨ìˆ˜
+    public void OnClickCloseButton()
+    {
+        ClosePanels();
+    }
 
-    // panel ¿ÀºêÁ§Æ®¸¦ active¿¡ µû¶ó¼­ Å³Áö ²øÁö Á¤ÇÏ´Â ÇÔ¼ö
+    // panel ì˜¤ë¸Œì íŠ¸ë¥¼ activeì— ë”°ë¼ì„œ í‚¬ì§€ ëŒì§€ ì •í•˜ëŠ” í•¨ìˆ˜
     private void SetPanel(GameObject panel, bool active)
     {
         if (panel == null) return;
@@ -42,11 +53,12 @@ public class LobbyManager : MonoBehaviour
         panel.SetActive(active);
     }
 
-    // ÆĞ³Îµé ²ô´Â ÇÔ¼ö
+    // íŒ¨ë„ë“¤ ë„ëŠ” í•¨ìˆ˜
     private void ClosePanels()
     {
         SetPanel(upgradePanel, false);
         SetPanel(settingsPanel, false);
     }
+
 
 }

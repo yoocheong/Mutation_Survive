@@ -1,20 +1,20 @@
 using UnityEngine;
 
-[RequireComponent (typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody rigidbody;
-    [SerializeField] private float speed = 5.0f;    // ÀÌµ¿ ¼Óµµ
-    [SerializeField] private float rotSpeed = 10.0f;    // È¸Àü ¼Óµµ
+    [SerializeField] private float speed = 5.0f;    // ì´ë™ ì†ë„
+    [SerializeField] private float rotSpeed = 10.0f;    // íšŒì „ ì†ë„
 
-    private Vector3 direction = Vector3.zero;   // ¹æÇâ º¤ÅÍ 0,0,0 À¸·Î ¼³Á¤
+    public Vector3 direction = Vector3.zero;   // ë°©í–¥ ë²¡í„° 0,0,0 ìœ¼ë¡œ ì„¤ì •
 
     private void Awake()
     {
-        rigidbody = this.GetComponent<Rigidbody>();  // Rigidbody ÄÄÆ÷³ÍÆ® °¡Á®¿À±â
+        rigidbody = this.GetComponent<Rigidbody>();  // Rigidbody ì»´í¬ë„ŒíŠ¸ ê°€ì ¸ì˜¤ê¸°
     }
 
-    // ¸Å ÇÁ·¹ÀÓ ¸¶´Ù ÀÔ·Â Ã³¸®
+    // ë§¤ í”„ë ˆì„ ë§ˆë‹¤ ì…ë ¥ ì²˜ë¦¬
     private void Update()
     {
         HandleInput();
@@ -22,23 +22,24 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (direction != Vector3.zero)  // ÀÔ·ÂÀÌ ÀÖÀ» ¶§¸¸ È¸Àü
+        if (direction != Vector3.zero)  // ì…ë ¥ì´ ìˆì„ ë•Œë§Œ íšŒì „
         {
-            Quaternion targetRot = Quaternion.LookRotation(direction);  // ¹Ù¶óº¼ ¹æÇâ Á¤ÇÔ
-            Quaternion newRot = Quaternion.Slerp(rigidbody.rotation, targetRot, rotSpeed * Time.fixedDeltaTime);    // targetRot ±îÁö ¾ó¸¶³ª È¸ÀüÇÒÁö Á¤ÇÔ
-            rigidbody.MoveRotation(newRot); // È¸Àü Àû¿ë
+            Quaternion targetRot = Quaternion.LookRotation(direction);  // ë°”ë¼ë³¼ ë°©í–¥ ì •í•¨
+            Quaternion newRot = Quaternion.Slerp(rigidbody.rotation, targetRot, rotSpeed * Time.fixedDeltaTime);    // targetRot ê¹Œì§€ ì–¼ë§ˆë‚˜ íšŒì „í• ì§€ ì •í•¨
+            rigidbody.MoveRotation(newRot); // íšŒì „ ì ìš©
         }
 
-        Vector3 moveAmount = direction * speed * Time.fixedDeltaTime;   // ¹°¸® ÇÁ·¹ÀÓ¸¶´Ù ÀÌµ¿·®
-        rigidbody.MovePosition(rigidbody.position + moveAmount);   // ÀÌµ¿ Àû¿ë
+        Vector3 moveAmount = direction * speed * Time.fixedDeltaTime;   // ë¬¼ë¦¬ í”„ë ˆì„ë§ˆë‹¤ ì´ë™ëŸ‰
+        rigidbody.MovePosition(rigidbody.position + moveAmount);   // ì´ë™ ì ìš©
     }
 
-    // ÀÔ·Â Ã³¸® ÇÏ´Â ÇÔ¼ö
+    // ì…ë ¥ ì²˜ë¦¬ í•˜ëŠ” í•¨ìˆ˜
     private void HandleInput()
     {
-        direction.x = Input.GetAxisRaw("Horizontal");
-        direction.z = Input.GetAxisRaw("Vertical");
-        direction.Normalize();  // º¤ÅÍ Á¤±ÔÈ­
+        direction.x = Input.GetAxisRaw(Constants.Input.InputHorizontal);
+        direction.z = Input.GetAxisRaw(Constants.Input.InputVertical);
+        direction.Normalize();  // ë²¡í„° ì •ê·œí™”
     }
 
 }
+

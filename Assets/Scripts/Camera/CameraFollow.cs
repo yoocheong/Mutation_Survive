@@ -2,16 +2,21 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] private Transform player;  // ÇÃ·¹ÀÌ¾î À§Ä¡
-    [SerializeField] private Vector3 offSet;    // Ä«¸Ş¶ó offSet
+    [SerializeField] private Transform player;  // í”Œë ˆì´ì–´ ìœ„ì¹˜
+    [SerializeField] private Vector3 offSet;    // ì¹´ë©”ë¼ offSet
 
     private void Awake()
     {
-        offSet = new Vector3(0f, 11.5f, -8.5f); // offSet ¼³Á¤
+        offSet = new Vector3(0f, 11.5f, -8.5f); // offSet ì„¤ì •
     }
 
-    // ÇÃ·¹ÀÌ¾î µû¶ó´Ù´Ï´Â ÄÚµå
     private void LateUpdate()
+    {
+        Follow();
+    }
+
+    // í”Œë ˆì´ì–´ ë”°ë¼ë‹¤ë‹ˆëŠ” í•¨ìˆ˜
+    private void Follow()
     {
         transform.position = new Vector3(
             player.position.x + offSet.x,

@@ -2,36 +2,36 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private float speed = 3f;  // Àû ÀÌµ¿ ¼Óµµ
-    [SerializeField] private bool isAlive = true;   // Àû »ıÁ¸ ¿©ºÎ
-    private Rigidbody target;   // ÃßÀûÇÒ ÇÃ·¹ÀÌ¾î Rigidbody
-    private Rigidbody rigidbody;    // ÀÌ ½ºÅ©¸³Æ®°¡ ºÙÀº ¿ÀºêÁ§Æ®ÀÇ Rigidbody
+    [SerializeField] private float speed = 3f;  // ì  ì´ë™ ì†ë„
+    [SerializeField] private bool isAlive = true;   // ì  ìƒì¡´ ì—¬ë¶€
+    private Rigidbody target;   // ì¶”ì í•  í”Œë ˆì´ì–´ Rigidbody
+    private Rigidbody rigidbody;    // ì´ ìŠ¤í¬ë¦½íŠ¸ê°€ ë¶™ì€ ì˜¤ë¸Œì íŠ¸ì˜ Rigidbody
 
     private void Awake()
     {
-        rigidbody = GetComponent<Rigidbody>();  // ÀÌ ½ºÅ©¸³Æ®°¡ ºÙÀº ¿ÀºêÁ§Æ®ÀÇ Rigidbody ÄÄÆ÷³ÍÆ®¸¦ º¯¼ö¿¡ ÀúÀå
+        rigidbody = GetComponent<Rigidbody>();  // ì´ ìŠ¤í¬ë¦½íŠ¸ê°€ ë¶™ì€ ì˜¤ë¸Œì íŠ¸ì˜ Rigidbody ì»´í¬ë„ŒíŠ¸ë¥¼ ë³€ìˆ˜ì— ì €ì¥
     }
 
     private void Start()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player"); // ÇÃ·¹ÀÌ¾î ÅÂ±× ºÙ¾îÀÖ´Â ¿ÀºêÁ§Æ® Ã£¾Æ¼­ º¯¼ö¿¡ ÀúÀå
-        if (player != null) target = player.GetComponent<Rigidbody>();  // ÃßÀûÇÒ ÇÃ·¹ÀÌ¾î Rigidbody ÄÄÆ÷³ÍÆ®¸¦ º¯¼ö¿¡ ÀúÀå
+        GameObject player = GameObject.FindGameObjectWithTag("Player"); // í”Œë ˆì´ì–´ íƒœê·¸ ë¶™ì–´ìˆëŠ” ì˜¤ë¸Œì íŠ¸ ì°¾ì•„ì„œ ë³€ìˆ˜ì— ì €ì¥
+        if (player != null) target = player.GetComponent<Rigidbody>();  // ì¶”ì í•  í”Œë ˆì´ì–´ Rigidbody ì»´í¬ë„ŒíŠ¸ë¥¼ ë³€ìˆ˜ì— ì €ì¥
     }
 
     private void FixedUpdate()
     {
-        Move(); // ¹°¸® ÇÁ·¹ÀÓ¸¶´Ù ÀÌµ¿ Ã³¸®
+        Move(); // ë¬¼ë¦¬ í”„ë ˆì„ë§ˆë‹¤ ì´ë™ ì²˜ë¦¬
     }
 
-    // ÇÃ·¹ÀÌ¾î ÃßÀûÇÏ´Â ÇÔ¼ö
+    // í”Œë ˆì´ì–´ ì¶”ì í•˜ëŠ” í•¨ìˆ˜
     private void Move()
     {
-        if (!isAlive || target == null) return; // Á×¾ú°Å³ª ÃßÀû ´ë»óÀÌ ³ÎÀÌ¸é ÀÌµ¿ ¾ÈÇÔ
+        if (!isAlive || target == null) return; // ì£½ì—ˆê±°ë‚˜ ì¶”ì  ëŒ€ìƒì´ ë„ì´ë©´ ì´ë™ ì•ˆí•¨
 
-        Vector3 direction = target.position - rigidbody.position;   // ¹æÇâ
-        Vector3 moveAmount = direction.normalized * speed * Time.fixedDeltaTime;    // ¹°¸® ÇÁ·¹ÀÓ¸¶´Ù ÀÌµ¿·®
+        Vector3 direction = target.position - rigidbody.position;   // ë°©í–¥
+        Vector3 moveAmount = direction.normalized * speed * Time.fixedDeltaTime;    // ë¬¼ë¦¬ í”„ë ˆì„ë§ˆë‹¤ ì´ë™ëŸ‰
 
-        rigidbody.MovePosition(rigidbody.position + moveAmount);    // ÀÌµ¿ Àû¿ë
+        rigidbody.MovePosition(rigidbody.position + moveAmount);    // ì´ë™ ì ìš©
     }
 
 }
