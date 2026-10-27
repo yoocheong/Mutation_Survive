@@ -14,8 +14,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Start()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player"); // 플레이어 태그 붙어있는 오브젝트 찾아서 변수에 저장
-        if (player != null) target = player.GetComponent<Rigidbody>();  // 추적할 플레이어 Rigidbody 컴포넌트를 변수에 저장
+       target = GameManager.instance.playerMovement.GetComponent<Rigidbody>();  // 추적할 플레이어 Rigidbody 컴포넌트를 변수에 저장
     }
 
     private void FixedUpdate()

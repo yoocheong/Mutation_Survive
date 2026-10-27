@@ -11,8 +11,8 @@ public class EnemyRepositioner : MonoBehaviour
 
     private void Start()
     {
-        playerTransform = GameObject.FindGameObjectWithTag(Constants.Tags.Player).GetComponent<Transform>();     // Player 트랜스폼 값 참조
-        playerMovement = GameObject.FindGameObjectWithTag(Constants.Tags.Player).GetComponent<PlayerMovement>();     // PlayerMovement 스크립트 참조
+        playerMovement = GameManager.instance.playerMovement;
+        playerTransform = playerMovement.transform;
 
         enemyTransform = GetComponent<Transform>();      // 적 Transform 참조
     }
