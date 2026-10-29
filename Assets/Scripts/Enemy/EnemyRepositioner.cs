@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyRepositioner : MonoBehaviour
 {
-    [SerializeField] private float repositionDistance = 20f;  // 재배치 범위(거리)
+    [SerializeField] private float repositionDistance = 30f;  // 재배치 범위(거리)
     [SerializeField] private float distance = 30f;  // 재배치 시 플레이어 이동 방향 * distance만큼 이동
     [SerializeField] private float randomRange = 5f;  // 재배치 시 랜덤한 x, z 좌표 범위
     private Transform playerTransform;  // 플레이어 Transform
@@ -32,7 +32,9 @@ public class EnemyRepositioner : MonoBehaviour
 
         Vector3 randomOffset = new Vector3(Random.Range(-randomRange, randomRange), 0, Random.Range(-randomRange, randomRange));   // 랜덤한 x, z 좌표
         // 플레이어 이동 방향 * distance만큼 이동시키고 랜덤한 x, z 좌표를 더해서 적 재배치
-        Vector3 newPosition = playerTransform.position + playerMovement.direction * distance + randomOffset; 
+        Vector3 newPosition = playerTransform.position + playerMovement.direction * distance + randomOffset;
+
+        Debug.Log(playerMovement.direction);
 
         enemyTransform.position = newPosition;   // 재배치
     }

@@ -110,8 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2228f9a7a19de04eadb6c8c73636ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyRepositioner
-  repositionDistance: 20
-  distance: 17
+  repositionDistance: 30
+  distance: 30
   randomRange: 5
 --- !u!1 &6208219442927149933
 GameObject:

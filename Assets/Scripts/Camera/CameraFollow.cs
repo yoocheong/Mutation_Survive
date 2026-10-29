@@ -7,7 +7,7 @@ public class CameraFollow : MonoBehaviour
 
     private void Awake()
     {
-        offSet = new Vector3(0f, 9f, -5f);  // 카메라 offSet 초기화
+        offSet = new Vector3(0f, 12f, -5f);  // 카메라 offSet 초기화
     }
 
     private void LateUpdate()

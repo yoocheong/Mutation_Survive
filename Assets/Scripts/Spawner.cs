@@ -2,18 +2,33 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private Transform[] spawnPoint;
+    private float timer;
+
+    private void Awake()
     {
-        
+        spawnPoint = GetComponentsInChildren<Transform>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        SpawnTime();
+    }
+
+    private void SpawnTime()
+    {
+        timer += Time.deltaTime;
+        if (timer > 0.2f)
         {
-            GameManager.instance.poolManager.Get(0);
+            timer = 0;
+            Spawn();
         }
+    }
+
+    private void Spawn()
+    {
+        GameObject enemy = GameManager.instance.poolManager.Get(Random.Range(0, 1));
+        enemy.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
     }
 }
