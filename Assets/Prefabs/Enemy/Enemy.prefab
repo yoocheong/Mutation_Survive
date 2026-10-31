@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9104748697445579011}
   - component: {fileID: 6910002446950207139}
   - component: {fileID: 8501057673838843124}
+  - component: {fileID: 4059552822494913018}
   - component: {fileID: 378744145722179286}
   - component: {fileID: 131323426310593359}
   m_Layer: 0
@@ -71,6 +72,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   speed: 3
   isAlive: 1
+--- !u!114 &4059552822494913018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2364075040478748284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7087008f9a77cf41be41d5f1ba9d924, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyRotation
+  rotationSpeed: 5
 --- !u!54 &378744145722179286
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -110,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2228f9a7a19de04eadb6c8c73636ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyRepositioner
-  repositionDistance: 30
+  repositionDistance: 35
   distance: 30
   randomRange: 5
 --- !u!1 &6208219442927149933

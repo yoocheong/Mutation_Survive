@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] private Transform player;  // 플레이어 위치
+    private Transform player;  // 플레이어 Transform
     private Vector3 offSet; // 카메라 offSet
 
     private void Awake()
@@ -10,14 +10,21 @@ public class CameraFollow : MonoBehaviour
         offSet = new Vector3(0f, 12f, -5f);  // 카메라 offSet 초기화
     }
 
-    private void LateUpdate()
+    private void Start()
     {
-        Follow();
+        player = GameManager.instance.playerMovement.transform; // 플레이어 Transform 변수에 저장
     }
 
-    // 플레이어 따라다니는 함수
-    private void Follow()
+    private void LateUpdate()
     {
+        FollowPlayer();
+    }
+
+    // 플레이어 따라다니는 메서드
+    private void FollowPlayer()
+    {
+        if (!player) return;
+
         transform.position = new Vector3(
             player.position.x + offSet.x,
             offSet.y,

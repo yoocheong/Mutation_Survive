@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody rigidbody;
+    private Rigidbody playerRigidbody;
     [SerializeField] private float speed = 5.0f;    // 이동 속도
     [SerializeField] private float rotSpeed = 10.0f;    // 회전 속도
 
@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        rigidbody = this.GetComponent<Rigidbody>();  // Rigidbody 컴포넌트 가져오기
+        playerRigidbody = this.GetComponent<Rigidbody>();  // Rigidbody 컴포넌트 가져오기
     }
 
     // 매 프레임 마다 입력 처리
@@ -22,18 +22,29 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (direction != Vector3.zero)  // 입력이 있을 때만 회전
-        {
-            Quaternion targetRot = Quaternion.LookRotation(direction);  // 바라볼 방향 정함
-            Quaternion newRot = Quaternion.Slerp(rigidbody.rotation, targetRot, rotSpeed * Time.fixedDeltaTime);    // targetRot 까지 얼마나 회전할지 정함
-            rigidbody.MoveRotation(newRot); // 회전 적용
-        }
-
-        Vector3 moveAmount = direction * speed * Time.fixedDeltaTime;   // 물리 프레임마다 이동량
-        rigidbody.MovePosition(rigidbody.position + moveAmount);   // 이동 적용
+        PlayerRotation();
+        MovePlayer();
     }
 
-    // 입력 처리 하는 함수
+    // 플레이어 회전 메서드
+    private void PlayerRotation()
+    {
+        if (direction != Vector3.zero)  // 입력이 있을 때만 회전
+        {
+            Quaternion targetRot = Quaternion.LookRotation(direction);  // 회전할 방향 정함
+            Quaternion newRot = Quaternion.Slerp(playerRigidbody.rotation, targetRot, rotSpeed * Time.fixedDeltaTime);    // targetRot 까지 얼마나 회전할지 정함
+            playerRigidbody.MoveRotation(newRot); // 회전 적용
+        }
+    }
+
+    // 플레이어 이동 메서드
+    private void MovePlayer()
+    {
+        Vector3 moveAmount = direction * speed * Time.fixedDeltaTime;   // 물리 프레임마다 이동량
+        playerRigidbody.MovePosition(playerRigidbody.position + moveAmount);   // 이동 적용
+    }
+
+    // 입력 처리하는 메서드
     private void HandleInput()
     {
         direction.x = Input.GetAxisRaw(Constants.Input.InputHorizontal);

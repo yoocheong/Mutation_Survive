@@ -19,17 +19,30 @@ public class EnemyRepositioner : MonoBehaviour
 
     private void Update()
     {
-        RepositionEnemy();
+        CheckDistanceToPlayerCharacter();
     }
 
-    //  적 재배치 하는 함수
-    private void RepositionEnemy()
+    // 실시간으로 적과 플레이어 사이의 거리를 계산하고, 재배치 거리와 비교하는 메서드
+    private void CheckDistanceToPlayerCharacter()
     {
         float distanceToPlayer = Vector3.Distance(enemyTransform.position, playerTransform.position);    // 적과 플레이어 사이의 거리
 
         // 적과 플레이어 사이의 거리가 distance 보다 이상이면 적 재배치
         if (distanceToPlayer <= repositionDistance) return;
 
+        OnRepositionRequest();
+
+    }
+
+    // 거리가 멀어졌을때 호출되는 이벤트 함수
+    private void OnRepositionRequest()
+    {
+        RepositionEnemy();
+    }
+
+    //  적 재배치 하는 메서드
+    private void RepositionEnemy()
+    {
         Vector3 randomOffset = new Vector3(Random.Range(-randomRange, randomRange), 0, Random.Range(-randomRange, randomRange));   // 랜덤한 x, z 좌표
         // 플레이어 이동 방향 * distance만큼 이동시키고 랜덤한 x, z 좌표를 더해서 적 재배치
         Vector3 newPosition = playerTransform.position + playerMovement.direction * distance + randomOffset;
@@ -38,4 +51,5 @@ public class EnemyRepositioner : MonoBehaviour
 
         enemyTransform.position = newPosition;   // 재배치
     }
+
 }

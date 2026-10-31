@@ -10,7 +10,6 @@ public class Spawner : MonoBehaviour
         spawnPoint = GetComponentsInChildren<Transform>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         SpawnTime();
