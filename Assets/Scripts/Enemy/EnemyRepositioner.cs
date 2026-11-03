@@ -47,8 +47,6 @@ public class EnemyRepositioner : MonoBehaviour
         // 플레이어 이동 방향 * distance만큼 이동시키고 랜덤한 x, z 좌표를 더해서 적 재배치
         Vector3 newPosition = playerTransform.position + playerMovement.direction * distance + randomOffset;
 
-        Debug.Log(playerMovement.direction);
-
         enemyTransform.position = newPosition;   // 재배치
     }
 
