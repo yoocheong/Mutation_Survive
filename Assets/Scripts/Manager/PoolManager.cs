@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class PoolManager : MonoBehaviour
 {
     public GameObject[] prefabs;    // 프리팹을 담는 배열
-    public List<GameObject>[] pools;    // 프리팹별롤 생성된 오브젝트를 보관하는 리스트 배열
+    public List<GameObject>[] pools;    // 프리팹별로 생성된 오브젝트를 보관하는 리스트 배열
 
     private void Awake()
     {

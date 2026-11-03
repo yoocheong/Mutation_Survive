@@ -1,8 +1,10 @@
 using UnityEngine;
+using static Spawner;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private float speed = 3f;  // 적 이동 속도
+    private float speed;  // 적 이동 속도
+    private int hp;
     [SerializeField] private bool isAlive = true;   // 적 생존 여부
     private Rigidbody target;   // 추적할 플레이어 Rigidbody
     private Rigidbody enemyRigidbody;    // 적 Rigidbody
@@ -32,6 +34,12 @@ public class EnemyMovement : MonoBehaviour
         Vector3 moveAmount = direction.normalized * speed * Time.fixedDeltaTime;    // 물리 프레임마다 이동량
 
         enemyRigidbody.MovePosition(enemyRigidbody.position + moveAmount);    // 이동 적용
+    }
+
+    public void Initialize(SpawnData spawnData)
+    {
+        speed = spawnData.speed;
+        hp = spawnData.hp;
     }
 
 }

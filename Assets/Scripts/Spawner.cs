@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    private Transform[] spawnPoint;
-    private float timer;
+    public Transform[] spawnPoint;
+    public SpawnData[] spawnData;
 
+    private float timer;
     [SerializeField] private int level;
-    private float[] spawnIntervals = { 1f, 0.9f, 0.8f, 0.7f, 0.6f, 0.5f, 0.4f, 0.3f, 0.1f, 0.05f };
 
     private void Awake()
     {
@@ -21,11 +21,10 @@ public class Spawner : MonoBehaviour
     private void SpawnTime()
     {
         timer += Time.deltaTime;
-        level = Mathf.Min(Mathf.FloorToInt(GameManager.instance.gameTime / 10f),
-            spawnIntervals.Length -1);
+        level = Mathf.FloorToInt(GameManager.instance.gameTime / 60f);
 
         
-        if (timer > spawnIntervals[level])
+        if (timer > spawnData[level].spawnTime)
         {
             timer = 0;
             Spawn();
@@ -34,7 +33,17 @@ public class Spawner : MonoBehaviour
 
     private void Spawn()
     {
-        GameObject enemy = GameManager.instance.poolManager.Get(Random.Range(0, 1));
+        GameObject enemy = GameManager.instance.poolManager.Get(level);
         enemy.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
+        enemy.GetComponent<EnemyMovement>().Initialize(spawnData[level]);
     }
+
+    [System.Serializable]
+    public class SpawnData
+    {
+        public float spawnTime;
+        public float speed;
+        public int hp;
+    }
+
 }
