@@ -4,7 +4,7 @@ using static Spawner;
 public class EnemyMovement : MonoBehaviour
 {
     private float speed;  // 적 이동 속도
-    private int hp;
+    private float hp;
     [SerializeField] private bool isAlive = true;   // 적 생존 여부
     private Rigidbody target;   // 추적할 플레이어 Rigidbody
     private Rigidbody enemyRigidbody;    // 적 Rigidbody
@@ -40,6 +40,27 @@ public class EnemyMovement : MonoBehaviour
     {
         speed = spawnData.speed;
         hp = spawnData.hp;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!other.CompareTag(Constants.Tags.Bullet)) return;
+
+        hp -= other.GetComponent<Bullet>().damage;
+
+        if (hp > 0)
+        {
+
+        }
+        else
+        {
+            Dead();
+        }
+    }
+
+    private void Dead()
+    {
+        this.gameObject.SetActive(false);
     }
 
 }

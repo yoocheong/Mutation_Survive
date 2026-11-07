@@ -33,7 +33,7 @@ public class Spawner : MonoBehaviour
 
     private void Spawn()
     {
-        GameObject enemy = GameManager.instance.poolManager.Get(level);
+        GameObject enemy = GameManager.instance.poolManager.Get(0);
         enemy.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
         enemy.GetComponent<EnemyMovement>().Initialize(spawnData[level]);
     }
@@ -43,7 +43,7 @@ public class Spawner : MonoBehaviour
     {
         public float spawnTime;
         public float speed;
-        public int hp;
+        public float hp;
     }
 
 }

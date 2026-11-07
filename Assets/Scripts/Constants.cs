@@ -15,5 +15,8 @@ public static class Constants
     {
         // 플레이어 태그 이름
         public const string Player = "Player";
+
+        // 불렛 태그 이름
+        public const string Bullet = "Bullet";
     }
 }
