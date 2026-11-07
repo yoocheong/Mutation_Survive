@@ -923,10 +923,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Weapon
   id: 0
   prefabId: 1
-  count: 10
+  count: 6
   damage: 10
-  speed: 0
-  radius: 1.5
+  speed: -150
+  radius: 1.7
 --- !u!1 &741572967
 GameObject:
   m_ObjectHideFlags: 0
@@ -1496,12 +1496,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c17f89485f1b958458c3f49684648bc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
+  spawnDataLevel: 0
+  spawnEnemyLevel: 0
   spawnPoint: []
   spawnData:
   - spawnTime: 0.5
     speed: 3
     hp: 10
-  level: 0
 --- !u!1 &1387294841
 GameObject:
   m_ObjectHideFlags: 0

@@ -36,28 +36,31 @@ public class EnemyMovement : MonoBehaviour
         enemyRigidbody.MovePosition(enemyRigidbody.position + moveAmount);    // 이동 적용
     }
 
+    // 스폰될 때 SpawnData의 값으로 적 이동속도, 체력 초기화
     public void Initialize(SpawnData spawnData)
     {
         speed = spawnData.speed;
         hp = spawnData.hp;
     }
 
+    // 피격 처리
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag(Constants.Tags.Bullet)) return;
+        if (!other.CompareTag(Constants.Tags.Bullet)) return;   // 무기 아니면 무시
 
-        hp -= other.GetComponent<Bullet>().damage;
+        hp -= other.GetComponent<Bullet>().damage;  // 무기 데미지 만큼 무시
 
         if (hp > 0)
         {
-
+            // 살아있을 때 피격 처리 (피격 애니메이션, 넉백 등 추가 예정)
         }
         else
         {
-            Dead();
+            Dead(); // 체력이 0 이하면 Dead()함수 호출
         }
     }
 
+    // 적 사망 메서드 (오브젝트 풀 재사용을 위해 파괴하지 않고 비활성화)
     private void Dead()
     {
         this.gameObject.SetActive(false);

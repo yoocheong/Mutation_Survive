@@ -5,6 +5,7 @@ public class EnemyRepositioner : MonoBehaviour
     [SerializeField] private float repositionDistance = 30f;  // 재배치 범위(거리)
     [SerializeField] private float distance = 30f;  // 재배치 시 플레이어 이동 방향 * distance만큼 이동
     [SerializeField] private float randomRange = 5f;  // 재배치 시 랜덤한 x, z 좌표 범위
+
     private Transform playerTransform;  // 플레이어 Transform
     private Transform enemyTransform;    // 적 Transform
     private PlayerMovement playerMovement;  // playerMovement 스크립트
@@ -14,7 +15,7 @@ public class EnemyRepositioner : MonoBehaviour
         playerMovement = GameManager.instance.playerMovement;
         playerTransform = playerMovement.transform;
 
-        enemyTransform = GetComponent<Transform>();      // 적 Transform 참조
+        enemyTransform = this.transform;
     }
 
     private void Update()
