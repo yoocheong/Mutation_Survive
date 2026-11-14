@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 4059552822494913018}
   - component: {fileID: 378744145722179286}
   - component: {fileID: 131323426310593359}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,7 +70,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e40c16061a37694cb89cef0faab3b51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
-  speed: 3
   isAlive: 1
 --- !u!114 &4059552822494913018
 MonoBehaviour:
@@ -138,7 +137,7 @@ GameObject:
   - component: {fileID: 4787363061137374772}
   - component: {fileID: 8890379165416652661}
   - component: {fileID: 3064868407831971887}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +229,7 @@ GameObject:
   - component: {fileID: 6712056490559244138}
   - component: {fileID: 6944012217236378157}
   - component: {fileID: 8758775550676941689}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
