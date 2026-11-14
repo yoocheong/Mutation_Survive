@@ -31,25 +31,34 @@ public class MeleeWeapon : WeaponBase
     {
         for (int index = 0; index < count; index++)
         {
-            Transform bullet;
+            Transform sword;
 
             if (index < this.transform.childCount)
             {
-                bullet = this.transform.GetChild(index);
+                sword = this.transform.GetChild(index);
             }
             else
             {
-                bullet = GameManager.instance.poolManager.Get(prefabId).transform;
-                bullet.parent = this.transform;
+                sword = GameManager.instance.poolManager.Get(prefabId).transform;
+                sword.parent = this.transform;
             }
 
             float angle = 360f * index / count;
             Quaternion rot = Quaternion.Euler(0, angle, 0);   // Y축 기준 각도
 
-            bullet.localPosition = rot * Vector3.forward * radius + Vector3.up * 1f;
-            bullet.localRotation = rot * Quaternion.Euler(90, 0, 0);
+            sword.localPosition = rot * Vector3.forward * radius + Vector3.up * 1f;
+            sword.localRotation = rot * Quaternion.Euler(90, 0, 0);
 
-            bullet.GetComponent<Bullet>().Initialize(damage, -1);
+            sword.GetComponent<Sword>().Initialize(damage, -1);
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!other.CompareTag("Enemy")) return;
+
+        EnemyHealth enemy = other.GetComponent<EnemyHealth>();
+        if (!enemy) return;
+        enemy.TakeDamage(damage);
     }
 }

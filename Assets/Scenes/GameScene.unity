@@ -344,6 +344,7 @@ GameObject:
   - component: {fileID: 272151766}
   - component: {fileID: 272151765}
   - component: {fileID: 272151768}
+  - component: {fileID: 272151769}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -452,6 +453,20 @@ MonoBehaviour:
     m_Bits: 1024
   targets: []
   nearestTarget: {fileID: 0}
+--- !u!114 &272151769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272151763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c97d1f59da1c2a84cb63f89a3856618f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  hp: 10
+  maxHp: 10
 --- !u!1 &275412006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1636,6 +1651,11 @@ MonoBehaviour:
   - spawnTime: 0.5
     speed: 3
     hp: 10
+    damage: 3
+  - spawnTime: 0.4
+    speed: 4
+    hp: 15
+    damage: 5
 --- !u!1 &1387294841
 GameObject:
   m_ObjectHideFlags: 0

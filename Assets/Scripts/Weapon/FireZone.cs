@@ -50,7 +50,9 @@ public class FireZone : MonoBehaviour
 
         foreach (Collider hit in hits)
         {
-            // 적 데미지 코드 따로 만들 예정
+            EnemyHealth enemy = hit.GetComponent<EnemyHealth>();
+            if (!enemy) return; 
+            enemy.TakeDamage(damage);
         }
     }
 }

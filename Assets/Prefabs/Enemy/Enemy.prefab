@@ -10,10 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 9104748697445579011}
   - component: {fileID: 6910002446950207139}
+  - component: {fileID: 378744145722179286}
   - component: {fileID: 8501057673838843124}
   - component: {fileID: 4059552822494913018}
-  - component: {fileID: 378744145722179286}
   - component: {fileID: 131323426310593359}
+  - component: {fileID: 507602026190584093}
+  - component: {fileID: 2113876922365837117}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Enemy
@@ -58,32 +60,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!114 &8501057673838843124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2364075040478748284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e40c16061a37694cb89cef0faab3b51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
-  isAlive: 1
---- !u!114 &4059552822494913018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2364075040478748284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7087008f9a77cf41be41d5f1ba9d924, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyRotation
-  rotationSpeed: 5
 --- !u!54 &378744145722179286
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -111,6 +87,32 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &8501057673838843124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2364075040478748284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e40c16061a37694cb89cef0faab3b51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
+  isAlive: 1
+--- !u!114 &4059552822494913018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2364075040478748284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7087008f9a77cf41be41d5f1ba9d924, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyRotation
+  rotationSpeed: 5
 --- !u!114 &131323426310593359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +128,34 @@ MonoBehaviour:
   repositionDistance: 35
   distance: 30
   randomRange: 5
+--- !u!114 &507602026190584093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2364075040478748284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c5c40cfd887a14a8fb6a88f4241a81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  hp: 0
+  maxHp: 0
+--- !u!114 &2113876922365837117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2364075040478748284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20ac351d90a56214a8a9b8a0715f4e50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
+  damage: 3
+  attackInterval: 1
 --- !u!1 &6208219442927149933
 GameObject:
   m_ObjectHideFlags: 0

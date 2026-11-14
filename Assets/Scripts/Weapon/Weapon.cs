@@ -1,5 +1,5 @@
 using UnityEngine;
-
+/*
 public class Weapon : MonoBehaviour
 {
     public int id;  // 무기 
@@ -88,3 +88,4 @@ public class Weapon : MonoBehaviour
         }
     }
 }
+*/

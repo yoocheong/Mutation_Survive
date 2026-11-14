@@ -22,7 +22,6 @@ public class RangedWeapon : WeaponBase
 
     public override void LevelUp(float damage, int count)
     {
-        Debug.Log("d");
         base.LevelUp(damage, count);   // 부모 기능 실행 (데미지, 발사 수 증가)
         per += 1;                      // 원거리 무기만 관통 +1
     }

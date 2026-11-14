@@ -44,7 +44,9 @@ public class Spawner : MonoBehaviour
         // enemy 위치를 스폰포인트 위치 중에서 무작위로 설정
         enemy.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
         // spawnDataLevel에 따른 적 능력치 초기화
-        enemy.GetComponent<EnemyMovement>().Initialize(spawnData[spawnDataLevel]);
+        enemy.GetComponent<EnemyMovement>().Initialize(spawnData[spawnDataLevel].speed);
+        enemy.GetComponent<EnemyHealth>().Initialize(spawnData[spawnDataLevel].hp);
+        enemy.GetComponent<EnemyAttack>().Initialize(spawnData[spawnDataLevel].damage);
     }
 
     // 적 소환 정보
@@ -54,6 +56,7 @@ public class Spawner : MonoBehaviour
         public float spawnTime; // 적 스폰 시간
         public float speed; // 적 이동속도
         public float hp;  // 적 hp
+        public float damage;  // 적 공격력
     }
 
 }

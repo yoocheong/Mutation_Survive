@@ -16,18 +16,13 @@ public class Bullet : MonoBehaviour
         originRotation = transform.rotation;    // 프리팹 원래 회전 저장
     }
 
-    public void Initialize(float damage, int pierceCount)
+    public void Initialize(float damage, int pierceCount, Vector3 dir)
     {
         this.damage = damage;
         this.pierceCount = pierceCount;
-        lifeTimer = 0f;
-    }
-
-    public void Initialize(float damage, int pierceCount, Vector3 dir)
-    {
-        Initialize(damage, pierceCount);
         transform.rotation = Quaternion.LookRotation(dir) * originRotation;
         rigid.linearVelocity = dir * 15f;
+        lifeTimer = 0;
     }
 
     private void Update()
@@ -44,6 +39,10 @@ public class Bullet : MonoBehaviour
         if (!other.CompareTag("Enemy") || !rigid) return;
 
         pierceCount--;                          // 관통 1 소모 (per → pierceCount)
+
+        EnemyHealth enemy = other.GetComponent<EnemyHealth>();
+        if (!enemy) return;
+        enemy.TakeDamage(damage);
 
         if (pierceCount < 0)
             Deactivate();

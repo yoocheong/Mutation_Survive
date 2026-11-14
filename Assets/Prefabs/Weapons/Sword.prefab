@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1980727488457069343}
   - component: {fileID: 3479593733995244186}
   - component: {fileID: 4746615514409116582}
-  - component: {fileID: 1991271907455032931}
+  - component: {fileID: -4292991748838172955}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Bullet
@@ -115,7 +115,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &1991271907455032931
+--- !u!114 &-4292991748838172955
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,8 +124,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1979543164483413461}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cd7505cedfef3f4f89aebc8c9bb0b69, type: 3}
+  m_Script: {fileID: 11500000, guid: 75e63f276843d914694696781cec1f7f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Bullet
+  m_EditorClassIdentifier: Assembly-CSharp::Sword
   damage: 0
   pierceCount: 0

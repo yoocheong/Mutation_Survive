@@ -130,6 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
   damage: 5
   pierceCount: 0
+  lifeTime: 3
 --- !u!54 &3470669771565520442
 Rigidbody:
   m_ObjectHideFlags: 0
