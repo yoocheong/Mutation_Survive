@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private float hp;
-    [SerializeField] private float maxHp;
+    [SerializeField] private float hp;  // 플레이어 체력
+    [SerializeField] private float maxHp;   // 플레이어 최대 체력
 
     public bool IsLive { get; private set; }
 
@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
         IsLive = true;
     }
 
+    // 
     public void Heal(float amount)
     {
         hp = Mathf.Min(hp + amount, maxHp);

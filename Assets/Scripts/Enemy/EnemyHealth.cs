@@ -3,19 +3,21 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] private float hp;
-    [SerializeField] private float maxHp;
+    [SerializeField] private float hp;  // 적 체력
+    [SerializeField] private float maxHp;   // 적 최대 체력
 
     public bool IsLive { get; private set;}
 
-    public event Action<EnemyHealth> OnDead;
+    public event Action<EnemyHealth> OnDead;    // 적 사망 이벤트
 
+    // 
     private void OnEnable()
     {
         IsLive = true;
         hp = maxHp;
     }
 
+    //
     public void Initialize(float maxHp)
     {
         this.maxHp = maxHp;
@@ -23,6 +25,7 @@ public class EnemyHealth : MonoBehaviour
         IsLive = true;
     }
 
+    //
     public void TakeDamage(float damage)
     {
         if (!IsLive) return;

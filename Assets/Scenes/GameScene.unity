@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 275412007}
   - component: {fileID: 275412008}
   m_Layer: 0
-  m_Name: Weapon2
+  m_Name: MolotovWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -980,7 +980,7 @@ GameObject:
   - component: {fileID: 639587585}
   - component: {fileID: 639587586}
   m_Layer: 0
-  m_Name: Weapon0
+  m_Name: MeleeWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1268,7 +1268,7 @@ GameObject:
   - component: {fileID: 852512952}
   - component: {fileID: 852512954}
   m_Layer: 0
-  m_Name: Weapon1
+  m_Name: RangedWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

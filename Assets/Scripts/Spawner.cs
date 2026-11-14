@@ -44,9 +44,7 @@ public class Spawner : MonoBehaviour
         // enemy 위치를 스폰포인트 위치 중에서 무작위로 설정
         enemy.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
         // spawnDataLevel에 따른 적 능력치 초기화
-        enemy.GetComponent<EnemyMovement>().Initialize(spawnData[spawnDataLevel].speed);
-        enemy.GetComponent<EnemyHealth>().Initialize(spawnData[spawnDataLevel].hp);
-        enemy.GetComponent<EnemyAttack>().Initialize(spawnData[spawnDataLevel].damage);
+        enemy.GetComponent<Enemy>().Initialize(spawnData[spawnDataLevel]);
     }
 
     // 적 소환 정보
