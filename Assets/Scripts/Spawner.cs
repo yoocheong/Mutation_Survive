@@ -26,7 +26,11 @@ public class Spawner : MonoBehaviour
     {
         timer += Time.deltaTime;
         spawnDataLevel = Mathf.FloorToInt(GameManager.instance.gameTime / 60f);  // 60초마다 레벨 1씩 증가
-        spawnEnemyLevel = Mathf.FloorToInt(GameManager.instance.gameTime / (3 * 60f)); // 3분마다 레벨 1씩 증가
+
+        // 3분마다 적 레벨 1씩 증가 (적 종류 수를 넘지 않게 제한)
+        spawnEnemyLevel = Mathf.Min(
+            Mathf.FloorToInt(GameManager.instance.gameTime / (3 * 60f)),
+            GameManager.instance.poolManager.EnemyTypeCount - 1);   // 마지막 적 번호에 도달하면 그 적만 계속 소환
 
         // timer가 레벨에 따른 스폰시간 넘으면 timer 초기화 및 Spawn 메서드 호출
         if (timer > spawnData[spawnDataLevel].spawnTime)
@@ -40,7 +44,7 @@ public class Spawner : MonoBehaviour
     private void Spawn()
     {
         // 풀 매니저에서 spawnEnemyLevel에 따른 몬스터 가져와서 지역변수 enemy에 저장
-        GameObject enemy = GameManager.instance.poolManager.Get(spawnEnemyLevel); 
+        GameObject enemy = GameManager.instance.poolManager.GetEnemy(spawnEnemyLevel);
         // enemy 위치를 스폰포인트 위치 중에서 무작위로 설정
         enemy.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
         // spawnDataLevel에 따른 적 능력치 초기화
