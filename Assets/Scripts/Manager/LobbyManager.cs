@@ -29,7 +29,7 @@ public class LobbyManager : MonoBehaviour
 
     // 함수 실행시 upgradePanel 키는 함수
     public void OnClickUpgradeButton()
-    { 
+    {
         SetPanel(upgradePanel, true);
     }
 
