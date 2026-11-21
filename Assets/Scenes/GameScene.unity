@@ -528,8 +528,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Level
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3da1424e6104efc46be7857ea8bd98a5, type: 2}
+  m_sharedMaterial: {fileID: -1142416905846271207, guid: 3da1424e6104efc46be7857ea8bd98a5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1049,7 +1049,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MolotovWeapon
   id: 2
   prefabId: 2
-  count: 1
+  count: 0
   damage: 0
   speed: 2
   scanRange: 8
@@ -1173,7 +1173,7 @@ MonoBehaviour:
   maxGameTime: 900
   level: 0
   exp: 0
-  nextExp: 03000000050000000a00000014000000280000003c00000064000000i
+  nextExp: 050000000a0000001400000028000000500000006400000078000000i
 --- !u!1 &337612591
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,8 +1376,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Level
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3da1424e6104efc46be7857ea8bd98a5, type: 2}
+  m_sharedMaterial: {fileID: -1142416905846271207, guid: 3da1424e6104efc46be7857ea8bd98a5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1513,8 +1513,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Desc
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3da1424e6104efc46be7857ea8bd98a5, type: 2}
+  m_sharedMaterial: {fileID: -1142416905846271207, guid: 3da1424e6104efc46be7857ea8bd98a5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1841,8 +1841,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Level
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3da1424e6104efc46be7857ea8bd98a5, type: 2}
+  m_sharedMaterial: {fileID: -1142416905846271207, guid: 3da1424e6104efc46be7857ea8bd98a5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1965,7 +1965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MeleeWeapon
   id: 0
   prefabId: 0
-  count: 0
+  count: 1
   damage: 0
   speed: -150
   radius: 1.7
@@ -2081,8 +2081,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Name
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3da1424e6104efc46be7857ea8bd98a5, type: 2}
+  m_sharedMaterial: {fileID: -1142416905846271207, guid: 3da1424e6104efc46be7857ea8bd98a5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2720,7 +2720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RangedWeapon
   id: 1
   prefabId: 1
-  count: 1
+  count: 0
   damage: 3
   speed: 0.5
   scanRange: 10
@@ -2964,8 +2964,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Name
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3da1424e6104efc46be7857ea8bd98a5, type: 2}
+  m_sharedMaterial: {fileID: -1142416905846271207, guid: 3da1424e6104efc46be7857ea8bd98a5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3166,8 +3166,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Desc
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3da1424e6104efc46be7857ea8bd98a5, type: 2}
+  m_sharedMaterial: {fileID: -1142416905846271207, guid: 3da1424e6104efc46be7857ea8bd98a5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3479,7 +3479,7 @@ MonoBehaviour:
   spawnEnemyLevel: 0
   spawnPoint: []
   spawnData:
-  - spawnTime: 0.1
+  - spawnTime: 0.5
     speed: 3
     hp: 10
     damage: 3
@@ -3487,6 +3487,38 @@ MonoBehaviour:
     speed: 4
     hp: 15
     damage: 5
+  - spawnTime: 0.3
+    speed: 5
+    hp: 20
+    damage: 7
+  - spawnTime: 0.2
+    speed: 6
+    hp: 25
+    damage: 9
+  - spawnTime: 0.1
+    speed: 7
+    hp: 30
+    damage: 11
+  - spawnTime: 0.05
+    speed: 8
+    hp: 30
+    damage: 15
+  - spawnTime: 0.05
+    speed: 9
+    hp: 35
+    damage: 20
+  - spawnTime: 0.05
+    speed: 10
+    hp: 35
+    damage: 20
+  - spawnTime: 0.04
+    speed: 10
+    hp: 35
+    damage: 20
+  - spawnTime: 0.03
+    speed: 10
+    hp: 35
+    damage: 20
 --- !u!1 &1387294841
 GameObject:
   m_ObjectHideFlags: 0
@@ -3629,8 +3661,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Desc
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3da1424e6104efc46be7857ea8bd98a5, type: 2}
+  m_sharedMaterial: {fileID: -1142416905846271207, guid: 3da1424e6104efc46be7857ea8bd98a5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3766,8 +3798,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Name
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3da1424e6104efc46be7857ea8bd98a5, type: 2}
+  m_sharedMaterial: {fileID: -1142416905846271207, guid: 3da1424e6104efc46be7857ea8bd98a5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

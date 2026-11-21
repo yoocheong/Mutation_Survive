@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 
-// 적 체력 관리 (적 프리팹에 붙임)
 // 데미지를 받아 체력이 0 이하가 되면 사망 처리 후 풀로 반환
 public class EnemyHealth : MonoBehaviour
 {

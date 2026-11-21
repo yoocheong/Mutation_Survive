@@ -1,6 +1,5 @@
 using UnityEngine;
 
-// 화염병이 떨어진 자리에 생기는 불장판 (불장판 프리팹에 붙임)
 // 지속 시간 동안 일정 간격마다 범위 안의 적에게 데미지를 줌
 public class FireZone : MonoBehaviour
 {

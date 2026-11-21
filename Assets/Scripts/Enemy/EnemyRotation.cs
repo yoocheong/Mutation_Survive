@@ -26,6 +26,7 @@ public class EnemyRotation : MonoBehaviour
         if (direction == Vector3.zero) return;  // 플레이어와 위치가 겹치면 방향을 정할 수 없으므로 회전하지 않음
 
         Quaternion targetRotation = Quaternion.LookRotation(direction); // 플레이어를 바라보는 회전값
-        transform.rotation = Quaternion.Slerp(this.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);  // 현재 회전에서 목표 회전으로 조금씩 회전 (부드러운 회전)
+        // 현재 회전에서 목표 회전으로 조금씩 회전 (부드러운 회전)
+        transform.rotation = Quaternion.Slerp(this.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime); 
     }
 }

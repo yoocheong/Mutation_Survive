@@ -58,7 +58,8 @@ public class MolotovWeapon : WeaponBase
             Vector3 startPos = transform.position + Vector3.up * 1f;    // 플레이어 위치보다 조금 위에서 출발
 
             Transform bottle = GameManager.instance.poolManager.Get(prefabId).transform;  // 풀에서 화염병 꺼내기
-            bottle.GetComponent<MolotovProjectile>().Launch(startPos, targetPos, flightTime, arcHeight, this);  // 출발/도착 위치, 비행 시간, 높이, 던진 무기 전달
+            // 출발/도착 위치, 비행 시간, 높이, 던진 무기 전달
+            bottle.GetComponent<MolotovProjectile>().Launch(startPos, targetPos, flightTime, arcHeight, this); 
         }
     }
 

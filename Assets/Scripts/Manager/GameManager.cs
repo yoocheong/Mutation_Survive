@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
         // 필요 경험치를 넘으면 레벨업
         if (exp >= NextExp)
         {
-            exp -= NextExp; // 넘친 경험치는 다음 레벨로 넘김 (level++ 전에 계산해야 함)
+            exp -= NextExp; // 넘친 경험치는 다음 레벨로 넘김
             level++;
             OnLevelUp?.Invoke(level);
         }
